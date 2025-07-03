@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=https://baidu.com">
+    <script>
+        window.location.href = "https://baidu.com";
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a href="https://baidu.com">target page</a>...</p>
+</body>
+</html>
