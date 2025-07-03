@@ -43,12 +43,9 @@
         <div class="app-download-tip">
             <span class="guidance-desc">点击右上角<img src="https://a6l.ooob.top/wj/3dian.png" class="icon-sgd"> 选择从浏览器打开</span>
         </div>
-        <a data-clipboard-text="http://a6l.ooob.top" class="app-download-btn">点此复制本站网址</a>
+        <a id="copy-btn" class="app-download-btn">点此复制本站网址</a>
     </div>
 
-    <script src="https://a6l.ooob.top/wj/jquery-3.3.1.min.js"></script>
-    <script src="https://a6l.ooob.top/wj/clipboard.min.js"></script>
-    <script src="https://a6l.ooob.top/wj/layer/layer.js"></script>
     <script>
         // 配置项
         const conf = {
@@ -76,16 +73,16 @@
             window.location.href = "https://a6l.ooob.top";
         }
 
-        // 初始化 ClipboardJS
-        new ClipboardJS(".app-download-btn");
-
-        // 复制按钮点击事件
-        $(".app-download-btn").click(function() {
-            layer.msg("复制成功，去自带的手机浏览器粘贴打开！", {
-                time: 2000
+        // 简单的剪贴板功能（替代 ClipboardJS）
+        document.getElementById("copy-btn").addEventListener("click", function() {
+            const textToCopy = "http://a6l.ooob.top";
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("复制成功，去自带的手机浏览器粘贴打开！");
+            }).catch(err => {
+                alert("复制失败，请手动复制：http://a6l.ooob.top");
+                console.error("复制失败:", err);
             });
         });
     </script>
-
 </body>
 </html>
