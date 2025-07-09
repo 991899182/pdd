@@ -105,7 +105,7 @@
             <p>2. 请按提示在手机 浏览器 打开</p>
         </div>
         <div class="app-download-tip">
-            <span class="guidance-desc">https://a6l.ooob.top/qun</span>
+            <span class="guidance-desc">https://a6l.ooob.top/</span>
         </div>
         <div class="app-download-tip">
             <span class="guidance-desc">点击右上角<img src="https://a6l.ooob.top/wj/3dian.png" class="icon-sgd" alt="菜单"> 选择从浏览器打开</span>
@@ -140,7 +140,7 @@
             document.getElementById("wxqq-tip").style.display = "flex";
         } else {
             // 非微信/QQ 浏览器，跳转到目标 URL
-            window.location.href = "https://a6l.ooob.top/qun";
+            window.location.href = "https://a6l.ooob.top/";
         }
 
         // 防止微信拦截复制功能
@@ -165,12 +165,12 @@
             new ClipboardJS(".app-download-btn").on("success", function() {
                 layer.msg("复制成功，去自带的手机浏览器粘贴打开！", { time: 2000 });
             }).on("error", function() {
-                fallbackCopyTextToClipboard("https://a6l.ooob.top/qun");
+                fallbackCopyTextToClipboard("https://a6l.ooob.top/");
             });
         } else {
             // 如果 ClipboardJS 加载失败，使用备用复制方案
             document.querySelector(".app-download-btn").addEventListener("click", function() {
-                fallbackCopyTextToClipboard("https://a6l.ooob.top/qun");
+                fallbackCopyTextToClipboard("https://a6l.ooob.top/");
             });
         }
     </script>
