@@ -214,7 +214,7 @@
                 }
                 
                 // 简单的防红链接生成逻辑（实际使用时可能需要后端支持）
-                const antiRedUrl = `https://${window.location.hostname}/jink.htm/c=${btoa(originalUrl)}`;
+                const antiRedUrl = `https://${window.location.hostname}/pdd/jink.htm/c=${btoa(originalUrl)}`;
                 
                 document.getElementById('antiRedUrl').textContent = antiRedUrl;
                 document.getElementById('result').style.display = 'block';
