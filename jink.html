@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>跳转中...</title>
+    <script>
+        // 获取URL参数
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // 解码并跳转
+        function redirect() {
+            const encodedUrl = getQueryParam('url');
+            if (encodedUrl) {
+                try {
+                    // 解码URL
+                    const originalUrl = atob(encodedUrl);
+                    
+                    // 添加延迟跳转（可选）
+                    setTimeout(function() {
+                        window.location.href = originalUrl;
+                    }, 1000); // 1秒后跳转
+                    
+                    // 显示跳转信息
+                    document.getElementById('info').innerHTML = `
+                        <p>正在跳转到目标网址...</p>
+                        <p>如果浏览器没有自动跳转，请<a href="${originalUrl}">点击这里</a></p>
+                    `;
+                } catch (e) {
+                    document.getElementById('info').innerHTML = '<p>链接无效或已过期</p>';
+                }
+            } else {
+                document.getElementById('info').innerHTML = '<p>缺少跳转参数</p>';
+            }
+        }
+
+        // 页面加载后执行
+        window.onload = redirect;
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+        #info {
+            margin: 20px auto;
+            max-width: 500px;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #06c;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <p>正在处理您的请求...</p>
+    </div>
+</body>
+</html>
